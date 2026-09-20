@@ -1,0 +1,47 @@
+name: Playwright UI Automation Tests Suite
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout local repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install Project Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest-html python-dotenv
+
+    - name: Initialize Playwright Browsers Infrastructure
+      run: |
+        pip install playwright
+        playwright install --with-deps
+
+    - name: Execute Test Suite with Secure Variables
+      env:
+        base_url: https://saucedemo.com
+        password: secret_sauce
+      run: |
+        python -m pytest --html=report.html --self-contained-html
+
+    - name: Archive Test Automation HTML Report Artifact
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: playwright-execution-report
+        path: report.html
+        retention-days: 15
