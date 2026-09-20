@@ -36,7 +36,8 @@ jobs:
         base_url: https://saucedemo.com
         password: secret_sauce
       run: |
-        python -m pytest --headless --html=report.html --self-contained-html
+        python -m pytest -o addopts="" --html=report.html --self-contained-html
+
 
     - name: Archive Test Automation HTML Report Artifact
       uses: actions/upload-artifact@v4
