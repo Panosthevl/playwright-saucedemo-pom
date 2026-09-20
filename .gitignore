@@ -1,0 +1,13 @@
+# Python caches
+__pycache__/
+.pytest_cache/
+.env
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# Test Reports & Images
+report.html
+bug_*.png
