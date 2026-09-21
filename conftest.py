@@ -19,15 +19,23 @@ def login_page(page):
 
 
 @pytest.fixture(scope="function")
-def logged_in(page,login_page,request):
-    logged_page = Inventorypage(page)
-    username = getattr(request,"param","standard_user")
-    logged_page.navigate()
+def logged_in(page, login_page, request):
+    username = getattr(request, "param", "standard_user")
+    
+    login_page.navigate()
+    
+    import os
+    password = os.getenv("PASSWORD") or os.getenv("password") or "secret_sauce"
+    
     login_page.username_fill(username)
-    login_page.password_fill(os.getenv("password"))
-    login_page.login_click()
+    login_page.password_fill(password)
+    login_page.login_click() 
+    
 
-    return logged_page
+    from pages.InventoryPage import Inventorypage 
+    logged_page = Inventorypage(page)
+    
+    yield logged_page
 
 
 
