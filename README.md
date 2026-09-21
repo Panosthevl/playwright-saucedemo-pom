@@ -53,7 +53,7 @@ Follow these steps to set up and run the automation suite locally:
 
 1. **Clone the repository and navigate to the project root:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/Panosthevl/playwright-saucedemo-pom
    cd playwright-saucedemo-pom
    ```
 
