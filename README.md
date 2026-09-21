@@ -8,7 +8,7 @@
 A production-ready, enterprise-level UI Automation Framework built from scratch using **Python**, **Playwright**, and **Pytest**. This framework models and validates the standard e-commerce workflows of the SauceDemo platform using industry-standard QA architecture.
 ##  Contact & Connect
 * **Developer:** Panagiotis Vlaras
-* **LinkedIn:** [://linkedin.com](https://://linkedin.com)
+* **LinkedIn:** [://linkedin.com](www.linkedin.com/in/panagiotis-vlaras)
 * **GitHub Profile:** [@Panosthevl](https://github.com/Panosthevl/playwright-saucedemo-pom)
 
 ## Key Framework Features
