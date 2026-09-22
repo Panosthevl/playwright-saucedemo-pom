@@ -2,7 +2,7 @@ name: Playwright UI Automation Tests Suite
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "**" ]
   pull_request:
     branches: [ main ]
 
